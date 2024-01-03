@@ -9,8 +9,6 @@ using UnityEngine;
 public class MoveContorl : MonoBehaviour
 {
     public Camera main_camera;
-    public GameSetting settings;
-    public GameState states;
 
     public CharacterController bodyController;
     public Transform bodyTransform;
@@ -51,10 +49,10 @@ public class MoveContorl : MonoBehaviour
         bodyController.Move(current_speed * Time.deltaTime);
     }
     void View(){
-        float MouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * settings.view_sensitivity;
-        float MouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * settings.view_sensitivity;
-        view_x -= MouseY * settings.x_asix_invert;
-        view_y += MouseX * settings.y_asix_invert;
+        float MouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * GameSetting.view_sensitivity;
+        float MouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * GameSetting.view_sensitivity;
+        view_x -= MouseY * GameSetting.x_asix_invert;
+        view_y += MouseX * GameSetting.y_asix_invert;
         if(view_y>360){
             view_y -= 360;
         }
@@ -69,7 +67,7 @@ public class MoveContorl : MonoBehaviour
     }
     void Update()
     {
-        if(states.pause){
+        if(GameState.pause){
             return;
         }
         Walk();

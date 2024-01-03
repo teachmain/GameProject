@@ -5,6 +5,6 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    public bool pause = true;
+    public static bool pause = false;
     
 }

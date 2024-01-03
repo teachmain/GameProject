@@ -6,7 +6,6 @@ using TMPro;
 
 public class Inter : MonoBehaviour
 {
-    public GameState states;
     public Camera main_camera;
     public TextMeshProUGUI msg_board;
     public TextMeshProUGUI info_board;
@@ -79,7 +78,7 @@ public class Inter : MonoBehaviour
     }
     void Update()
     {
-        if(states.pause){
+        if(GameState.pause){
             return;
         }
         Inter_search();
