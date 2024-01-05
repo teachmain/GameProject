@@ -24,7 +24,7 @@ public class Doors : GeneralObj
             if(key.password == this.password){
                 open = true;
             }else{
-                print("wrong key");
+                main.GetComponentInParent<MoveContorl>().healthy.GetHit(20);
             }
         }
     }

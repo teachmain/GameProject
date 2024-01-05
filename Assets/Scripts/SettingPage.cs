@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Palmmedia.ReportGenerator.Core.Parser.Analysis;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SettingPage : MonoBehaviour
 {
@@ -34,7 +34,11 @@ public class SettingPage : MonoBehaviour
        }
        
     }
-    public void updateMouseSens(float value){
+    public void UpdateMouseSens(float value){
         GameSetting.view_sensitivity = 30 + 500 * value;
+    }
+    public void BackToMainMenu(){
+        SceneManager.LoadScene("start",LoadSceneMode.Single);
+
     }
 }

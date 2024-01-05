@@ -22,7 +22,7 @@ public class Inter : MonoBehaviour
         pick_obj.layer = 3;
     }
     void Inter_search(){
-        inter_ray.origin = main_camera.transform.position + 0.5f * main_camera.transform.forward;
+        inter_ray.origin = main_camera.transform.position + 0.8f * main_camera.transform.forward;
         inter_ray.direction = main_camera.transform.forward;
         RaycastHit hit_info;
         if(!Physics.Raycast(inter_ray,out hit_info,1.5f,1)){
@@ -48,7 +48,7 @@ public class Inter : MonoBehaviour
             if(currentObj.GetComponent<Collider>()!=null){
                 currentObj.GetComponent<Collider>().enabled=false;
             }
-            currentObj.transform.position = main_camera.transform.position + 1.5f * main_camera.transform.forward;
+            currentObj.transform.position = main_camera.transform.position + 1.5f * main_camera.transform.forward + 1.2f * main_camera.transform.right - 0.5f * main_camera.transform.up;
             if(currentObj.GetComponent<GeneralObj>()!=null){
                 Update_msg(info_board,currentObj.GetComponent<GeneralObj>().info_msg);
             }
